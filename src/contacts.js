@@ -2,16 +2,15 @@ import fs from "node:fs/promises";
 import { faker } from "@faker-js/faker";
 import path from "node:path";
 
-const contactsPath = path.join(
-  process.cwd(),
-  "hw1",
-  "src",
-  "db",
-  "contacts.json"
-);
-// console.log(path.resolve("hw1", "src", "db", "contacts.json"));
+// const contactsPath = path.join(
+//   process.cwd(),
+//   "src",
+//   "db",
+//   "contacts.json"
+// );
+const contactsPath = path.resolve("src", "db", "contacts.json");
 
-async function listContacts() {
+export async function listContacts() {
   // ...твій код. Повертає масив контактів.
   const data = await fs.readFile(contactsPath, "utf-8");
   return JSON.parse(data);
@@ -57,4 +56,4 @@ async function addContact(name, email, phone) {
   return newContact;
 }
 
-export { listContacts, getContactById, removeContact, addContact };
+export { getContactById, removeContact, addContact };
