@@ -45,7 +45,7 @@ async function removeContact(contactId) {
 async function addContact(name, email, phone) {
   // ...твій код. Повертає об'єкт доданого контакту (з id).
   const newContact = {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     name: name || faker.person.fullName(),
     email: email || faker.internet.email(),
     phone: phone || faker.phone.number(),
