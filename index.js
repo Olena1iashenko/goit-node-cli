@@ -22,6 +22,7 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "list":
       // ...
       // await listContacts();
+      console.log(await listContacts());
       break;
 
     case "get":
